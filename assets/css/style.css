@@ -55,6 +55,9 @@ p {
 .cursor-pointer {
    cursor: pointer !important;
 }
+.cursor-disable {
+   cursor: no-drop;
+}
 @media screen and (max-width: 991px) {
    .md-hide {
       display: none;
@@ -2475,4 +2478,38 @@ section {
 }
 .passwordVisibility:hover {
    color: var(--color-primary-hover);
+}
+
+/*--------------------------------------------------------------
+# Profile
+--------------------------------------------------------------*/
+.profile-wrapper {
+   padding-top: 15vh;
+}
+.profile-wrapper .card {
+   padding: 0.8rem;
+}
+.profile-wrapper .sidebar {
+   gap: 0.5rem;
+}
+.profile-wrapper .sidebar .nav-link {
+   background: var(--color-light);
+   border-radius: 5px;
+   padding: 1rem 1.2rem;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   line-height: 100%;
+   color: var(--color-dark);
+   overflow: hidden;
+}
+.profile-wrapper .sidebar .nav-link.active {
+   color: var(--color-light);
+   background: var(--color-primary);
+}
+.profile-wrapper .sidebar .nav-link:not(.active):hover {
+   background: #f6f6f6;
+}
+.profile-wrapper .contact {
+   text-align: left;
 }

@@ -74,8 +74,45 @@
    <!-- ======= Hero Section ======= -->
    <section id="hero" class="profile-wrapper d-flex align-items-center">
       <div class="container">
-         <div class="row">
-            <div class="col-lg-2 col-md-2 col-12">
+         <div class="row flex-lg-row-reverse">
+            <div class="col-lg-10 col-lg-10 col-12">
+               <div class="card p-0">
+                  <div class="card-header">
+                     <h5 class="m-0 p-2">My Account</h5>
+                  </div>
+
+                  <div class="form p-3 p-lg-4">
+                     <form action="#" method="post" class="php-email-form  my-2">
+                        <div class="row gy-4">
+                           <div class="col-md-12">
+                              <label for="" class="mb-1">Full Name</label>
+                              <input type="text" name="name" class="form-control cursor-disable" placeholder="Email"
+                                 value="Shubham Gujarathi" disabled title="You cannot update name">
+                           </div>
+                           <div class="col-md-12">
+                              <label for="" class="mb-1">Email</label>
+                              <input type="text" name="name" class="form-control" placeholder="Email"
+                                 value="shubham@websitevikreta.com">
+                           </div>
+                           <div class="col-md-12">
+                              <div class="loading">Loading</div>
+                              <div class="error-message"></div>
+                              <div class="sent-message">Your message has been sent. Thank you!</div>
+                              <div class="d-flex justify-content-between">
+                                 <button type="submit" class="btn">
+                                    <span>Update Email</span>
+                                 </button>
+                                 <button type="submit" class="btn btn-link fs-6">
+                                    <span><i class="bi bi-arrow-left"></i> Back</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-2 col-lg-2 col-12 mt-3 mt-lg-0">
                <nav class="nav sidebar flex-column card">
                   <a class="nav-link active" aria-current="page" href="#">
                      <i class="bi bi-person-fill"></i>
@@ -93,38 +130,11 @@
                      <i class="bi bi-gear-fill"></i>
                      <span>Settings</span>
                   </a>
+                  <a class="nav-link text-danger" href="#">
+                     <i class="bi bi-box-arrow-right"></i>
+                     <span>Logout</span>
+                  </a>
                </nav>
-            </div>
-            <div class="col-lg-10 col-md-10 col-12">
-               <div class="card contact p-4">
-                  <h5>My Account</h5>
-                  <hr class="my-2">
-
-                  <form action="#" method="post" class="php-email-form mt-2">
-                     <div class="row gy-4">
-                        <div class="col-md-12">
-                           <label for="" class="mb-1">Full Name</label>
-                           <input type="text" name="name" class="form-control cursor-disable" placeholder="Email"
-                              value="Shubham Gujarathi" disabled>
-                        </div>
-                        <div class="col-md-12">
-                           <label for="" class="mb-1">Email</label>
-                           <input type="text" name="name" class="form-control" placeholder="Email"
-                              value="shubham@websitevikreta.com">
-                        </div>
-
-                        <div class="col-md-12">
-                           <div class="loading">Loading</div>
-                           <div class="error-message"></div>
-                           <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                           <button type="submit" class="btn">
-                              <span>Update</span>
-                           </button>
-                        </div>
-                     </div>
-                  </form>
-               </div>
             </div>
          </div>
       </div>

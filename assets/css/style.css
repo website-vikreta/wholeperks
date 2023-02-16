@@ -15,8 +15,12 @@
    --color-light: #fff;
    --color-primary: #4154f1;
    --color-primary-hover: #717ff5;
+   --color-primary-light: hsl(234, 84%, 92%);
    --color-secondary: #f85c3d;
    --color-secondary-hover: #ec7962;
+   /* Override bootstrap colors */
+   --bs-danger: #f85c3d !important;
+   --bs-danger-rgb: 248, 92, 61 !important;
 }
 
 /*--------------------------------------------------------------
@@ -62,6 +66,14 @@ p {
    .md-hide {
       display: none;
    }
+}
+.btn-link {
+   background: none !important;
+   border: none !important;
+   outline: none !important;
+   text-decoration: underline;
+   color: var(--color-primary) !important;
+   padding: 0 !important;
 }
 /* #endregion */
 
@@ -1722,42 +1734,45 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact {
+:is(.contact, .form) {
    padding-block: 20vh 10vh;
 }
-.contact .info-box {
-   color: #444444;
+:is(.contact, .form) .info-box {
+   color: var(--color-dark);
    background: #fafbff;
    padding: 30px;
 }
-
-.contact .info-box i {
+:is(.contact, .form) .info-box i {
    font-size: 38px;
    line-height: 0;
    color: #4154f1;
 }
 
-.contact .info-box h3 {
+:is(.contact, .form) .info-box h3 {
    font-size: 20px;
    color: #012970;
    font-weight: 700;
    margin: 20px 0 10px 0;
 }
 
-.contact .info-box p {
+:is(.contact, .form) .info-box p {
    padding: 0;
    line-height: 24px;
    font-size: 14px;
    margin-bottom: 0;
 }
 
-.contact .php-email-form {
+:is(.contact, .form) .php-email-form {
    background: #fafbff;
    padding: 30px;
    height: 100%;
 }
+.form .php-email-form {
+   background: transparent;
+   padding: 0;
+}
 
-.contact .php-email-form .error-message {
+:is(.contact, .form) .php-email-form .error-message {
    display: none;
    color: #fff;
    background: #ed3c0d;
@@ -1767,7 +1782,7 @@ section {
    font-weight: 600;
 }
 
-.contact .php-email-form .sent-message {
+:is(.contact, .form) .php-email-form .sent-message {
    display: none;
    color: #fff;
    background: #18d26e;
@@ -1777,7 +1792,7 @@ section {
    font-weight: 600;
 }
 
-.contact .php-email-form .loading {
+:is(.contact, .form) .php-email-form .loading {
    display: none;
    background: #fff;
    text-align: center;
@@ -1785,7 +1800,7 @@ section {
    margin-bottom: 24px;
 }
 
-.contact .php-email-form .loading:before {
+:is(.contact, .form) .php-email-form .loading:before {
    content: "";
    display: inline-block;
    border-radius: 50%;
@@ -1798,28 +1813,28 @@ section {
    animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input,
-.contact .php-email-form textarea {
+:is(.contact, .form) .php-email-form input,
+:is(.contact, .form) .php-email-form textarea {
    border-radius: 0;
    box-shadow: none;
    font-size: 14px;
    border-radius: 0;
 }
 
-.contact .php-email-form input:focus,
-.contact .php-email-form textarea:focus {
+:is(.contact, .form) .php-email-form input:focus,
+:is(.contact, .form) .php-email-form textarea:focus {
    border-color: #4154f1;
 }
 
-.contact .php-email-form input {
+:is(.contact, .form) .php-email-form input {
    padding: 10px 15px;
 }
 
-.contact .php-email-form textarea {
+:is(.contact, .form) .php-email-form textarea {
    padding: 12px 15px;
 }
 
-.contact .php-email-form .btn {
+:is(.contact, .form) .php-email-form .btn {
    background: #4154f1;
    border: 0;
    padding: 10px 30px;
@@ -1828,12 +1843,17 @@ section {
    border-radius: 4px;
 }
 
-.contact .php-email-form .btn.btn-linkedin {
+:is(.contact, .form) .php-email-form .btn.btn-linkedin {
    background: #0a66c2;
 }
 
-.contact .php-email-form .btn:hover {
+:is(.contact, .form) .php-email-form .btn:hover {
    background: #5969f3;
+}
+
+.form-control:disabled {
+   background: hsl(220, 0%, 96%);
+   border-color: var(--color-primary-light);
 }
 
 @-webkit-keyframes animate-loading {
@@ -2574,6 +2594,11 @@ section {
 }
 .profile-wrapper .card {
    padding: 0.8rem;
+   border: 1px solid var(--color-primary-light);
+}
+.profile-wrapper .card .card-header {
+   background: #f6f9ff;
+   border-color: var(--color-primary-light);
 }
 .profile-wrapper .sidebar {
    gap: 0.5rem;
@@ -2596,6 +2621,6 @@ section {
 .profile-wrapper .sidebar .nav-link:not(.active):hover {
    background: #f6f6f6;
 }
-.profile-wrapper .contact {
+.profile-wrapper :is(.contact, .form) {
    text-align: left;
 }

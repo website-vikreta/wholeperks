@@ -1858,11 +1858,11 @@ section {
    gap: 0.5rem;
 }
 .btn.btn-danger {
-   background: var(--color-secondary);
+   background: var(--color-secondary) !important;
 }
 .btn.btn-danger:hover,
 .btn.btn-danger:focus {
-   background: var(--color-secondary-hover);
+   background: var(--color-secondary-hover) !important;
 }
 :is(.contact, .form) .php-email-form .btn.btn-linkedin {
    background: #0a66c2;
@@ -2768,4 +2768,123 @@ section {
    .services .services-items {
       grid-template-columns: repeat(1, 1fr);
    }
+}
+
+/*--------------------------------------------------------------
+# Styling Services Management Page
+--------------------------------------------------------------*/
+.table * {
+   font-size: 0.9rem;
+}
+.table.dataTable {
+   border-radius: 5px;
+   overflow: hidden;
+   border: none !important;
+}
+.table thead {
+   background: var(--color-black);
+   color: var(--color-light);
+}
+.table thead * {
+   font-weight: 500 !important;
+}
+.table tr {
+   border-color: var(--color-primary-light);
+}
+.table tbody tr * {
+   font-weight: 400 !important;
+}
+.table tbody tr:nth-child(odd) {
+   background: #f6f9ff !important;
+}
+/* Datatables */
+.dataTables_wrapper {
+   --size: 2.25rem;
+}
+.dataTables_length,
+.dataTables_filter {
+   font-size: 0.9rem;
+   margin-bottom: 0.5rem;
+   color: var(--color-dark);
+}
+.dataTables_info,
+.dataTables_paginate {
+   font-size: 0.9rem;
+   margin-top: 0.5rem;
+   color: var(--color-dark);
+}
+.dataTables_paginate {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+}
+.dataTables_wrapper .dataTables_filter input {
+   outline: none;
+   border-radius: 5px;
+   height: var(--size);
+   padding: 0.5rem;
+}
+.dataTables_wrapper .dataTables_filter input:focus {
+   border-color: var(--color-primary);
+}
+.dataTables_wrapper .dataTables_paginate span {
+   display: flex;
+   gap: 0.25rem;
+}
+.dataTables_wrapper .dataTables_paginate span .paginate_button,
+.dataTables_wrapper .dataTables_paginate span .paginate_button.current {
+   display: grid;
+   place-content: center;
+   height: var(--size);
+   aspect-ratio: 1 / 1;
+   border-radius: 5px;
+   background: #f6f9ff;
+   border: 1px solid var(--color-primary-light);
+}
+.dataTables_wrapper .dataTables_paginate span .paginate_button.current {
+   background: var(--color-primary);
+   border-color: var(--color-primary);
+   color: var(--color-light) !important;
+   pointer-events: none;
+}
+.dataTables_wrapper .dataTables_paginate span .paginate_button:hover {
+   background: var(--color-primary-light);
+   color: var(--color-dark) !important;
+   border-color: var(--color-primary-light);
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.next,
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous {
+   background: transparent !important;
+   color: var(--color-dark) !important;
+   outline: none !important;
+   box-shadow: none !important;
+   border: none !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.next.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous.disabled {
+   pointer-events: none !important;
+   opacity: 0.6;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.next:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.next:focus,
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous:focus {
+   background: transparent !important;
+   color: var(--color-primary) !important;
+}
+.dataTables_wrapper .dataTables_length select {
+   height: var(--size);
+   padding-inline: 0.5rem;
+}
+@media screen and (max-width: 768px) {
+   .dataTables_wrapper {
+      --size: 2rem;
+   }
+}
+
+/* rich text editor */
+.tox-tinymce {
+   border: 1px solid #ced4da !important;
+   border-radius: 0 !important;
 }

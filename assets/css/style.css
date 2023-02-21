@@ -1860,9 +1860,19 @@ section {
 .btn.btn-danger {
    background: var(--color-secondary) !important;
 }
+.btn.btn-success {
+   background: green;
+}
 .btn.btn-danger:hover,
 .btn.btn-danger:focus {
    background: var(--color-secondary-hover) !important;
+}
+.btn.btn-table {
+   width: 2rem;
+   aspect-ratio: 1 / 1;
+   padding: 0;
+   display: grid;
+   place-content: center;
 }
 :is(.contact, .form) .php-email-form .btn.btn-linkedin {
    background: #0a66c2;
@@ -2791,11 +2801,21 @@ section {
 .table tr {
    border-color: var(--color-primary-light);
 }
+.table th {
+   white-space: nowrap;
+}
 .table tbody tr * {
    font-weight: 400 !important;
 }
 .table tbody tr:nth-child(odd) {
    background: #f6f9ff !important;
+}
+.table .service-title {
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   min-width: 300px;
 }
 /* Datatables */
 .dataTables_wrapper {
@@ -2876,6 +2896,9 @@ section {
 .dataTables_wrapper .dataTables_length select {
    height: var(--size);
    padding-inline: 0.5rem;
+}
+.dataTables_wrapper .dataTables_info {
+   opacity: 0.8;
 }
 @media screen and (max-width: 768px) {
    .dataTables_wrapper {
